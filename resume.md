@@ -1,0 +1,2 @@
+Resume Description
+Designed and developed CampusLens, an AI-powered media management ecosystem for campus organizations, enabling event-wise albums, smart media discovery, face-clustered personalized feeds, AI-generated event summaries, QR album sharing, club engagement leaderboards, and production-ready backend services with JWT authentication, RBAC, rate limiting, audit logs, Docker, and CI/CD workflows.
