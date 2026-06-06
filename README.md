@@ -1,79 +1,231 @@
-# CIG_Project
-# CampusLens - AI-Powered Event Memories Platform
 
-CampusLens is a full-stack event and media management platform for college clubs and societies. It helps organizers create event albums, discover photos through AI signals, share memories with QR album links, and give members a personalized feed of moments they appear in.
 
-## What Changed
+# CampusLens — AI-Powered Event Memories Platform
 
-This workspace was empty, so CampusLens has been scaffolded as a fresh product implementation inspired by the supplied Event & Media Management problem statement. The codebase uses new domain naming, modular folders, a redesigned UI, a professional database schema, production-readiness scaffolding, and AI-oriented services.
+CampusLens is a modern full-stack event and media management platform designed for college clubs, societies, and campus communities.
 
-## Highlights
+It helps organizers manage events, curate media intelligently, and deliver personalized memory experiences using AI-powered discovery, smart albums, and engagement analytics.
 
-- Event Timeline View for each campus event
-- Memory Highlights Generator
-- AI Event Summary
-- QR Album Sharing
-- Club Leaderboard
-- Event Attendance Heatmap
-- Smart Favourite Collections
-- Duplicate Photo Detector
-- Media Quality Scoring
-- Personalized Memory Feed
-- JWT-style authentication, RBAC, rate limiting, audit logs, and error monitoring
-- Docker and CI workflow support
+---
 
-## Demo Login
+# ✨ Features
 
-All demo accounts use password `campus123`.
+## 📸 Smart Event Media Management
 
-| Role | Email |
-| --- | --- |
-| Admin | `admin@campuslens.dev` |
-| Club Lead | `lead@campuslens.dev` |
-| Photographer | `photo@campuslens.dev` |
-| Member | `member@campuslens.dev` |
+* Create and manage event albums
+* Upload and organize event photos/videos
+* QR-based album sharing
+* Event timeline view
+* Smart favourite collections
 
-## Run Locally
+## 🤖 AI-Powered Experiences
+
+* Personalized memory feed
+* AI-generated event summaries
+* Scene detection and captioning
+* Face clustering and photo discovery
+* Duplicate photo detection
+* Media quality scoring
+
+## 📊 Analytics & Engagement
+
+* Club leaderboard
+* Attendance heatmaps
+* Event engagement insights
+* Media activity tracking
+
+## 🔐 Security & Reliability
+
+* JWT-style authentication
+* Role-based access control (RBAC)
+* API rate limiting
+* Audit logging
+* Error monitoring
+* Production-ready backend structure
+
+## 🐳 Deployment & DevOps
+
+* Docker support
+* CI workflow ready
+* Modular architecture
+* Scalable folder structure
+
+---
+
+# 🧪 Demo Accounts
+
+All demo accounts use the password:
+
+```bash
+campus123
+```
+
+| Role         | Email                                                 |
+| ------------ | ----------------------------------------------------- |
+| Admin        | [admin@campuslens.dev](mailto:admin@campuslens.dev)   |
+| Club Lead    | [lead@campuslens.dev](mailto:lead@campuslens.dev)     |
+| Photographer | [photo@campuslens.dev](mailto:photo@campuslens.dev)   |
+| Member       | [member@campuslens.dev](mailto:member@campuslens.dev) |
+
+---
+
+# 🚀 Getting Started
+
+## Prerequisites
+
+* Node.js (v18+ recommended)
+* npm
+
+No external runtime dependencies are required.
+
+---
+
+# ⚙️ Installation
+
+Clone the repository:
+
+```bash
+git clone <your-repo-url>
+cd CIG_Project
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
 
 ```bash
 npm start
 ```
 
-Open [http://localhost:4177](http://localhost:4177).
+Open the app in your browser:
 
-The project intentionally avoids third-party runtime dependencies, so it can run in restricted lab environments with only Node.js installed.
+```bash
+http://localhost:4177
+```
 
-## Folder Structure
+---
 
-```text
+# 📁 Project Structure
+
+```bash
 .
-├── ai/                  # Scene detection, face clustering, captions, search, quality scoring
-├── backend/             # HTTP API, routes, middleware, auth, rate limiting
-├── database/            # SQL schema, seed data, ER diagram
-├── docs/                # Architecture, API, deployment, report, roadmap
-├── frontend/            # CampusLens dashboard UI
-├── notifications/       # Notification service and templates
-├── services/            # Domain, security, and observability services
-├── storage/             # Object storage and watermark planning
+├── ai/                  # AI services: captions, clustering, quality scoring
+├── backend/             # API routes, middleware, authentication
+├── database/            # SQL schema, ER diagrams, seed data
+├── docs/                # Architecture, reports, deployment docs
+├── frontend/            # Dashboard UI and client-side logic
+├── notifications/       # Notification templates and services
+├── services/            # Security, observability, shared services
+├── storage/             # Media storage and watermark planning
 ├── Dockerfile
 └── docker-compose.yml
 ```
 
-## Useful Commands
+---
+
+# 🧠 AI Modules
+
+CampusLens includes modular AI-oriented services for:
+
+* Face clustering
+* Scene recognition
+* Smart media search
+* Caption generation
+* Quality assessment
+* Personalized feed recommendations
+
+These services are designed to work in restricted academic/lab environments with minimal setup requirements.
+
+---
+
+# 🛠️ Available Scripts
+
+Run development server:
 
 ```bash
-npm run check
-npm test
 npm start
 ```
 
-## Documentation
+Run tests:
 
-- [Architecture](docs/ARCHITECTURE.md)
-- [API Documentation](docs/API.md)
-- [Database Schema](database/schema.sql)
-- [Deployment Guide](docs/DEPLOYMENT.md)
-- [Project Report](docs/PROJECT_REPORT.md)
-- [Feature Roadmap](docs/FEATURE_ROADMAP.md)
-- [UI Redesign Plan](docs/UI_REDESIGN.md)
-- [Code Changes](docs/CODE_CHANGES.md)
+```bash
+npm test
+```
+
+Run project checks:
+
+```bash
+npm run check
+```
+
+---
+
+# 📚 Documentation
+
+The `/docs` folder includes:
+
+* Architecture Documentation
+* API Documentation
+* Database Schema
+* Deployment Guide
+* Project Report
+* Feature Roadmap
+* UI Redesign Plan
+
+---
+
+# 🐳 Docker Support
+
+Run using Docker:
+
+```bash
+docker-compose up --build
+```
+
+---
+
+# 🎯 Project Goals
+
+CampusLens aims to solve common campus media management challenges:
+
+* Scattered event photos
+* Difficult media discovery
+* Low member engagement
+* Poor archival systems
+* Lack of personalized experiences
+
+By combining event management with AI-assisted media organization, CampusLens creates a centralized digital memory platform for campus communities.
+
+---
+
+# 🔮 Future Enhancements
+
+* Real-time collaboration
+* AI-generated event highlight reels
+* OCR-based poster/event extraction
+* Cross-club discovery feed
+* Mobile application support
+* Cloud object storage integration
+* Advanced recommendation engine
+
+---
+
+# 👨‍💻 Tech Philosophy
+
+CampusLens intentionally minimizes third-party runtime dependencies to ensure:
+
+* Easy deployment
+* Compatibility with restricted lab systems
+* Faster onboarding
+* Simpler maintenance
+* Better portability
+
+---
+
+# 📄 License
+
+This project is intended for academic, educational, and portfolio purposes.
