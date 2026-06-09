@@ -102,6 +102,10 @@ http://localhost:4000
 
 ---
 
+[🌐 Live Demo](https://campuslens-t70n.onrender.com/) • [📂 Source Code](https://github.com/PrakharGola/CampusLens)
+
+---
+
 ## 🔑 Default Login Accounts
 
 | Role         | Email                                                 | Password  |
