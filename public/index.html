@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CampusLens</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="brand">CampusLens</div>
+      <nav class="nav-links">
+        <a href="#" data-route="dashboard">Dashboard</a>
+        <a href="#" data-route="events">Events</a>
+        <a href="#" data-route="my-photos">My Photos</a>
+        <a href="#" data-route="notifications">Notifications</a>
+        <a href="#" data-route="favorites">Favorites</a>
+      </nav>
+      <div class="user-area" id="userArea"></div>
+    </header>
+
+    <main id="app" class="content"></main>
+
+    <div id="modalRoot"></div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
