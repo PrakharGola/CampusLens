@@ -1,9 +1,3 @@
-Here’s a **clean, professional, GitHub-ready README** for your CampusLens project — improved structure, no fluff, and fully aligned with your actual Node + Express + SQLite setup.
-
-You can paste this directly into `README.md`.
-
----
-
 # 📸 CampusLens
 
 A lightweight **Campus Event & Media Management Platform** built with **Node.js, Express, and SQLite**.
@@ -267,15 +261,3 @@ GitHub: [https://github.com/PrakharGola](https://github.com/PrakharGola)
 
 MIT License — free to use for learning and development.
 
----
-
-# 🚀 If you want next upgrade
-
-I can help you:
-
-* make this README **portfolio-level (startup style)**
-* add **badges + screenshots section**
-* create **killer GitHub landing page**
-* or prepare it for **hackathon submission**
-
-Just tell 👍
