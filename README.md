@@ -1,189 +1,281 @@
-CampusLens - MVP
+Here’s a **clean, professional, GitHub-ready README** for your CampusLens project — improved structure, no fluff, and fully aligned with your actual Node + Express + SQLite setup.
 
-A compact, production-ready MVP of CampusLens: a campus-event and media management platform with simple authentication, event and album management, media uploads, social interactions, AI tagging, basic face-based discovery, and downloadable watermarked media. This version is designed for rapid submission and local development.
+You can paste this directly into `README.md`.
 
-Table of Contents
-• Overview
-• What’s Included
-• Architecture & Tech Stack
-• Getting Started
-• Project Structure
-• Database Schema (SQLite)
-• API Reference (Endpoints)
-• Frontend Overview
-• AI & Face Matching (Lite)
-• Development & Testing
-• Deployment
-• Contributing
-• License
-• Contact
+---
 
-Overview
+# 📸 CampusLens
 
-CampusLens MVP is a compact, self-contained platform to demonstrate core problem-solution fit for an Event & Media Management platform. It includes:
+A lightweight **Campus Event & Media Management Platform** built with **Node.js, Express, and SQLite**.
+It supports event publishing, media uploads, social interactions, and basic AI-style tagging — designed as a fast, demo-ready MVP.
 
-• Event and album management with public/private visibility
-• Local file uploads with drag-and-drop (simulated via standard input)
-• Social interactions: likes, comments, and favorites
-• Lightweight AI tagging (heuristic)
-• Simple, consent-based face matching (signature-based)
-• Watermark metadata for downloads
-• SQLite-based local database (no external services)
-• Minimal front-end (vanilla JS) to illustrate workflows
+---
 
-This version emphasizes clarity, portability, and speed to deliver a holistic, demo-ready submission today.
+## 🚀 Features
 
-What’s Included
-• Single-stack Node.js backend (Express)
-• SQLite database (via better-sqlite3)
-• Local file uploads (uploads/ folder)
-• Minimal API layer with JWT authentication
-• Simple frontend (public/index.html, public/app.js, public/styles.css)
-• Seed script to populate sample data
-• Lightweight AI stubs for tagging and face-matching
+### 🔐 Authentication
 
-Notes:
-• This is a pragmatic MVP, not a full production-grade system.
-• No AWS/Azure/GCP dependencies required for this version.
-• Frontend is vanilla JS for quick demonstration; you can swap in a framework later if needed.
+* JWT-based login system
+* Role-based access:
 
-Architecture & Tech Stack
-• Backend: Node.js with Express
-• Database: SQLite (via better-sqlite3)
-• Authentication: JWT
-• Storage: Local filesystem (uploads/ directory)
-• AI: Lightweight heuristic tagging and signature-based face matching (no external AI service)
-• Frontend: Vanilla HTML/CSS/JS
-• Packaging: Minimal dependencies for quick setup
+  * Admin
+  * Photographer
+  * Club Member
 
-Getting Started
-Install dependencies
-   - npm install
+### 🎉 Events & Clubs
 
-Seed the database
-   - npm run seed
+* Create and manage clubs
+* Organize events under clubs
+* Public / Private event visibility
+* Event cover images
 
-Start the server
-   - npm start
+### 🖼️ Media System
 
-Open the app
-   - http://localhost:4000
+* Album-based media organization
+* Image uploads (local storage)
+* Media captions and metadata
+* Download-ready media URLs
 
-Notes:
-• If you changed the default port, update the server startup accordingly.
-• Seed user accounts:
-  - Admin: admin@campuslens.dev / campus123
-  - Photographer: photo@campuslens.dev / campus123
-  - Member: member@campuslens.dev / campus123
+### ❤️ Social Features
 
-Project Structure
-• Root
-  - server.js
-  - seed.js
-  - db.js
-  - auth.js
-  - routes/
-    - auth.js
-    - events.js
-    - media.js
-    - social.js
-    - notifications.js
-    - search.js
-    - face.js
-  - uploads/.gitkeep
-  - public/
-    - index.html
-    - styles.css
-    - app.js
+* Like media posts
+* Comment system
+* Favorites system
 
-How to map to your actual repo:
-• Preserve the exact file paths when you paste into GitHub.
-• If you already have files with the same paths, merge carefully, prioritizing the final content from this README’s reference.
+### 🏷️ Tagging System
 
-Database Schema (SQLite)
-• Users: id, name, email, passwordhash, role, avatarurl, createdat
-• Clubs: id, name, description
-• Events: id, clubid, title, category, venue, eventdate, visibility, coverimageurl
-• Albums: id, eventid, title, description
-• Media: id, albumid, uploaderid, fileurl, filepath, mediatype, mimetype, sizebytes, originalfilename, caption, facesignature
-• Media Tags: id, mediaid, tag, score
-• Likes: id, mediaid, userid
-• Comments: id, mediaid, userid, body, createdat
-• Favorites: id, mediaid, userid
-• Notifications: id, userid, type, title, message, isread, entityid, created_at
+* Auto-generated tags (heuristic-based)
+* Tag scoring system
 
-Note: This is a simplified, flat schema designed for rapid development.
+### 👤 Face Signature (Mock AI)
 
-API Reference (Endpoints)
-• Auth
-  - POST /api/auth/register
-  - POST /api/auth/login
-  - GET /api/auth/me
+* Stores lightweight face signature vector
+* Enables simple “my photos” matching (demo version)
 
-• Clubs (basic)
-  - POST /api/clubs
-  - GET /api/clubs
-  - GET /api/clubs/:clubId
+---
 
-• Events
-  - GET /api/events
-  - POST /api/events
-  - GET /api/events/:eventId
-  - PATCH /api/events/:eventId
-  - DELETE /api/events/:eventId
+## 🧱 Tech Stack
 
-• Albums
-  - GET /api/events/:eventId/albums
-  - POST /api/events/:eventId/albums
+* **Backend:** Node.js + Express
+* **Database:** SQLite (better-sqlite3)
+* **Auth:** JWT
+* **Storage:** Local filesystem (`uploads/`)
+* **Frontend:** Vanilla HTML, CSS, JavaScript
+* **AI Features:** Lightweight heuristic tagging + mock face signatures
 
-• Media (upload, list, detail)
-  - POST /api/media/upload/initiate
-  - POST /api/media/upload/complete
-  - GET /api/media
-  - GET /api/media/:mediaId
-  - DELETE /api/media/:mediaId
+---
 
-• Social
-  - POST /api/media/:mediaId/likes
-  - POST /api/media/:mediaId/favorite
-  - GET /api/media/:mediaId/comments
-  - POST /api/media/:mediaId/comments
-  - (Note: This MVP uses a compact social surface)
+## 📦 Installation
 
-• Notifications
-  - GET /api/notifications
-  - PATCH /api/notifications/:id/read
-  - PATCH /api/notifications/read-all
+### 1. Clone the repo
 
-• Search
-  - GET /api/search/media
-  - GET /api/search/events
+```bash
+git clone https://github.com/PrakharGola/CampusLens.git
+cd CampusLens
+```
 
-• Face (My Photos)
-  - POST /api/me/face-profile
-  - GET /api/me/face-matches
+---
 
-• Downloads
-  - POST /api/media/:mediaId/download
+### 2. Install dependencies
 
-• Share
-  - POST /api/events/:eventId/share
-  - GET /api/share/:token
+```bash
+npm install
+```
 
-• Health
-  - GET /api/health
+---
 
-Frontend Overview
-• Public, minimal UI wired to backend
-• Basic navigation and routing simulated with simple JS
-• Upload zone supports drag-and-drop
-• Media cards render basic metadata and actions
-• No heavy frontend framework required for this MVP
+### 3. Seed database
 
-If you want, I can tailor this README to:
-• Your exact file layout
-• Specific endpoints you implemented
-• Any branding or project naming you’re using
-• A quick-start shell script for Linux/macOS or Windows
+```bash
+node seed.js
+```
 
-Would you like me to adapt this to your actual repo structure or adjust for a specific hosting/docker setup?
+---
+
+### 4. Start server
+
+```bash
+node server.js
+```
+
+---
+
+### 5. Open in browser
+
+```
+http://localhost:4000
+```
+
+---
+
+## 🔑 Default Login Accounts
+
+| Role         | Email                                                 | Password  |
+| ------------ | ----------------------------------------------------- | --------- |
+| Admin        | [admin@campuslens.dev](mailto:admin@campuslens.dev)   | campus123 |
+| Photographer | [photo@campuslens.dev](mailto:photo@campuslens.dev)   | campus123 |
+| Member       | [member@campuslens.dev](mailto:member@campuslens.dev) | campus123 |
+
+---
+
+## 📁 Project Structure
+
+```
+CampusLens/
+│
+├── server.js
+├── db.js
+├── seed.js
+├── auth.js
+│
+├── routes/
+│   ├── auth.js
+│   ├── events.js
+│   ├── media.js
+│   ├── social.js
+│   ├── search.js
+│   ├── notifications.js
+│   └── face.js
+│
+├── uploads/
+│
+└── public/
+    ├── index.html
+    ├── app.js
+    └── styles.css
+```
+
+---
+
+## 🗄️ Database Schema (Simplified)
+
+* **users** → authentication + roles
+* **clubs** → campus clubs
+* **events** → events under clubs
+* **albums** → event albums
+* **media** → uploaded images
+* **media_tags** → AI-style tags
+* **likes** → user likes
+* **comments** → user comments
+* **favorites** → saved media
+* **notifications** → system alerts
+
+---
+
+## 🔌 API Overview
+
+### Auth
+
+* `POST /api/auth/register`
+* `POST /api/auth/login`
+* `GET /api/auth/me`
+
+### Events
+
+* `GET /api/events`
+* `POST /api/events`
+* `GET /api/events/:id`
+
+### Media
+
+* `GET /api/media`
+* `POST /api/media/upload/initiate`
+* `POST /api/media/upload/complete`
+
+### Social
+
+* `POST /api/media/:id/likes`
+* `POST /api/media/:id/comments`
+* `POST /api/media/:id/favorite`
+
+### Search
+
+* `GET /api/search/media`
+* `GET /api/search/events`
+
+### Face Matching (Mock)
+
+* `POST /api/me/face-profile`
+* `GET /api/me/face-matches`
+
+---
+
+## 🧪 Development Notes
+
+* Uses SQLite for zero-config setup
+* All media stored locally in `/uploads`
+* Seed script resets database each run
+* Face matching is **mock logic (not real AI)**
+
+---
+
+## 🌐 Deployment
+
+### Recommended (Production-ready)
+
+#### Backend Hosting:
+
+* Render
+* Railway
+
+#### Frontend:
+
+* Same server (Express static hosting)
+  OR
+* Vercel (if separated later)
+
+---
+
+### Important for Deployment
+
+Update server port handling:
+
+```js
+const PORT = process.env.PORT || 4000
+```
+
+---
+
+## ⚠️ Limitations (MVP)
+
+* No cloud storage (uses local uploads)
+* No real AI model (only simulated tagging)
+* SQLite not suitable for large scale
+* Face matching is heuristic only
+
+---
+
+## 📌 Future Improvements
+
+* PostgreSQL migration
+* AWS S3 media storage
+* Real AI tagging model
+* React frontend upgrade
+* Mobile app version
+* WebSocket notifications
+
+---
+
+## 👨‍💻 Author
+
+**Prakhar Gola**
+GitHub: [https://github.com/PrakharGola](https://github.com/PrakharGola)
+
+---
+
+## 📄 License
+
+MIT License — free to use for learning and development.
+
+---
+
+# 🚀 If you want next upgrade
+
+I can help you:
+
+* make this README **portfolio-level (startup style)**
+* add **badges + screenshots section**
+* create **killer GitHub landing page**
+* or prepare it for **hackathon submission**
+
+Just tell 👍
